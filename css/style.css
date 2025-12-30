@@ -129,18 +129,18 @@ nav {
    ===================================================== */
 
 .hero {
-   .hero {
-    block-size: 70vh;                    /* More widely supported than block-size */
-    min-block-size: 500px;               /* Equivalent to min-block-size */
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-                url("images/hero.jpg") no-repeat center center / cover;
+  .hero {
+    background-image: url('images/hero.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    min-height: 70vh;
+
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     text-align: center;
-    color: var(--text-light);
-    padding: 0 20px;
+    padding: 20px;
 }
 }
 
@@ -360,5 +360,11 @@ footer {
 
     .content {
         padding: 30px 20px;
+    }
+}
+@media (max-width: 768px) {
+    .hero {
+        min-height: 50vh;
+        background-position: top center;
     }
 }
