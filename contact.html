@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags for proper encoding, responsiveness, and page description -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact us with your feedback, questions, or suggestions about healthy living">
+    <title>Healthy Living Awareness - Contact</title>
+    
+    <!-- Shared external stylesheet for consistent design -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Consistent header and navigation -->
+    <header>
+        <nav>
+            <div class="logo">Healthy Living</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="nutrition.html">Nutrition</a></li>
+                <li><a href="exercise.html">Exercise</a></li>
+                <li><a href="mental.html">Mental Health</a></li>
+                <li><a href="sleep.html">Sleep</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+            <!-- Mobile menu toggle icon -->
+            <div class="menu-toggle">☰</div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Page-specific hero section -->
+        <section class="hero">
+            <h1>Contact Us</h1>
+            <p>We'd love to hear your feedback, questions, or suggestions!</p>
+        </section>
+
+        <!-- Main content with contact form -->
+        <section class="content contact-content">
+            <h2>Send us a Message</h2>
+            <p>Use the form below to get in touch. All fields are required.</p>
+
+            <!-- Contact form with client-side validation -->
+            <form id="contact-form" novalidate>
+                <div class="form-group">
+                    <label for="name">Your Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Your Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">Subject:</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="8" required></textarea>
+                </div>
+
+                <button type="submit">Send Message</button>
+            </form>
+
+            <!-- Simple thank you message area (hidden initially) -->
+            <div id="thank-you" style="display: none;">
+                <h3>Thank You!</h3>
+                <p>Your message has been received. (In a real website with backend, it would be sent now.)</p>
+            </div>
+
+            <!-- Image to make the page visually appealing -->
+            <img src="images/contact.jpg" alt="Friendly person smiling and ready to help, representing open communication" width="600" style="margin-block-start: 30px;">
+            <!-- Royalty-free image showing friendliness or communication -->
+        </section>
+    </main>
+
+    <!-- Consistent footer -->
+    <footer>
+        <p>&copy; 2025 Mensah Lawson-1703330972 All rights reserved. Promoting wellness awareness.</p>
+    </footer>
+
+    <!-- Shared JavaScript for mobile menu and form handling -->
+    <script src="script.js"></script>
+
+    <!-- Inline script specifically for contact form validation and feedback -->
+    <script>
+        // This script handles client-side form validation and shows a confirmation message
+        // No server-side processing (pure frontend as required for this static project)
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            // Prevent actual form submission (since no backend)
+            e.preventDefault();
+
+            // Check if HTML5 validation passes (required fields and email format)
+            if (this.checkValidity()) {
+                // Hide the form and show thank you message
+                this.style.display = 'none';
+                document.getElementById('thank-you').style.display = 'block';
+            } else {
+                // If invalid, show browser default messages and a custom alert
+                alert('Please fill in all fields correctly before submitting.');
+            }
+        });
+    </script>
+</body>
+</html>
